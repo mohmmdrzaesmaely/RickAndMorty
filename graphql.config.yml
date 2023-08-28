@@ -1,0 +1,19 @@
+projects:
+  default:
+    schema:
+      - "https://rickandmortyapi.com/graphql"
+    documents:
+      - "./src/graphql/gqls/**/*.graphql"
+
+generates:
+  src/graphql/generated/graphql.ts:
+    schema: 
+      - "https://rickandmortyapi.com/graphql"
+    overwrite: true
+    documents:
+      - "./src/graphql/gqls/**/*.graphql"
+
+    plugins: 
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
